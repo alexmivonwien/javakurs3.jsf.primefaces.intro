@@ -12,7 +12,7 @@ import javax.faces.context.PartialViewContext;
 
 /**
  * A calendar bean that is used for both ajax and "normal" HTTP-Requests.
- * To programatically check wheter a call is an ajax call, 
+ * To programmatically check wheter a call is an ajax call, 
  * @see https://stackoverflow.com/questions/7428058/distinguish-ajax-requests-from-full-requests-in-jsf-custom-validator
  *  
  * @RequestScoped means that one instance of the class is used for each request
@@ -21,7 +21,7 @@ import javax.faces.context.PartialViewContext;
  *
  */
 @ManagedBean
-@RequestScoped
+@RequestScoped // if no scope provided - defaults to @RequestScope 
 public class CalendarBean {
 
 	public enum MONTH {

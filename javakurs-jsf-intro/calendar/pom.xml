@@ -45,6 +45,6 @@
 	</dependency>
   </dependencies>
   <build>
-    <finalName>jsf.intro.calendar</finalName>
+    <finalName>javakurs3.jsf.intro</finalName>
   </build>
 </project>
