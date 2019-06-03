@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta charset="UTF-8" />
@@ -18,13 +19,43 @@
 				Strasse:
 			</td>
 			<td>
-				<h:inputText value="#{contactBean.street}"></h:inputText>
+				<h:inputText value="#{contactBean.strasse}"></h:inputText>
 			</td>
 		</tr>
-		Haus Nummer:
-		<h:inputText value="#{contactBean.hausNummer}"></h:inputText>
-		
-		<h:commandButton value="Check days in month" action = "#{calendarBean.determineNextView}" />
+		<tr>
+			<td>
+				Haus Nummer:
+			</td>
+			<td>
+				<h:inputText value="#{contactBean.hausNummer}"  p:type="number"></h:inputText>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				PLZ:
+			</td>
+			<td>
+				<h:inputText value="#{contactBean.plz}" id="plzId">
+					<f:ajax event="blur" render="ortId" execute="@this"/>
+				</h:inputText>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Ort:
+			</td>
+			<td>
+				<h:inputText value="#{contactBean.ort}" id="ortId"/>
+			</td>
+		</tr>
+		<tr>		
+			<td>
+				<input type="reset" value ="Abbrechen"/>
+			</td>
+			<td>
+				<h:commandButton value="Submit Feedback" action = "#{calendarBean.goToNextView}" />			
+			</td>
+		</tr>
 		</table>
 	</h:form>
 </h:body>

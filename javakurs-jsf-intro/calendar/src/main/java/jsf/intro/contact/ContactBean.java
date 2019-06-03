@@ -1,7 +1,20 @@
 package jsf.intro.contact;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
 
+/**
+ * HTML5 Support in JSF 2.2, (for example: make <h:inputText> accept only digits (pure HTML))
+ *  
+ * @see http://hantsy.blogspot.com/2013/08/jsf-22-html5-support.html
+ * 
+ * 
+ * 
+ * @author Alex-Mi
+ *
+ */
 @ManagedBean
 // No scope provided - defaults to @RequestScope 
 public class ContactBean {
@@ -10,6 +23,20 @@ public class ContactBean {
 	private short hausNummer;
 	private String ort;
 	private int plz;
+	
+	
+	private Map<Integer, String> plzOrtMap = new HashMap<>();
+	
+	public ContactBean() {
+		plzOrtMap.put(1010, "Wien,Innere Stadt");
+		plzOrtMap.put(1020, "Wien,Leopoldstadt");
+		plzOrtMap.put(1030, "Wien,Landstraﬂe");
+		plzOrtMap.put(1040, "Wien,Wieden");
+		plzOrtMap.put(1050, "Wien,Margareten");
+		plzOrtMap.put(1060, "Wien,Mariahilf");
+		plzOrtMap.put(1070, "Wien,Neubau");
+		plzOrtMap.put(1080, "Wien,Josefstadt");
+	}
 	
 	public String getStrasse() {
 		return strasse;
@@ -34,6 +61,13 @@ public class ContactBean {
 	}
 	public void setPlz(int plz) {
 		this.plz = plz;
+		if (plzOrtMap.get(plz)!=null) {
+			this.setOrt(plzOrtMap.get(plz));
+		}
+	}
+	
+	public String goToNextView() {
+		return null;
 	}
 	
 }
