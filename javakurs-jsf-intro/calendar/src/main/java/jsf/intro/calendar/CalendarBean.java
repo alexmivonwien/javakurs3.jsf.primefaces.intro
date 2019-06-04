@@ -10,6 +10,8 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.context.PartialViewContext;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * A calendar bean that is used for both ajax and "normal" HTTP-Requests.
  * To programmatically check wheter a call is an ajax call, 
@@ -81,6 +83,10 @@ public class CalendarBean {
 	}
 
 	private void calculateMonthDays() {
+		
+		if (StringUtils.isEmpty(selectedMonth)){
+			return;
+		}
 
 		MONTH monthSelected = MONTH.valueOf(selectedMonth);
 
@@ -121,6 +127,8 @@ public class CalendarBean {
 		case DEC:
 			selectedMonthDays = 31;
 			break;
+		default:
+			
 		}
 
 	}

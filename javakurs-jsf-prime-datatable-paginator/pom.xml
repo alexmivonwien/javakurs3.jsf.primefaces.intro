@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>javakurs-bibliothek-jsf-datatable-paginator</groupId>
-	<artifactId>javakurs-bibliothek-jsf-datatable-paginator</artifactId>
+	<groupId>javakurs-jsf-prime-datatable-paginator</groupId>
+	<artifactId>javakurs-jsf-prime-datatable-paginator</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>javakurs-bibliothek-jsf-datatable-paginator Maven Webapp</name>
+	<name>javakurs-jsf-prime-datatable-paginator Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -68,7 +68,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>bibliothek-jsf-paginator</finalName>
+		<finalName>javakurs-jsf-prime-datatable-paginator</finalName>
 		<plugins>
 			<plugin>
 			    <artifactId>maven-war-plugin</artifactId>
